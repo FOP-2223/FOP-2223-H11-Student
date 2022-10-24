@@ -2,9 +2,17 @@ package h11;
 
 import h11.h2.LSystemGrowerTest;
 import h11.h2.LSystemGrowerTestCase;
+import h11.h3.LSystemParserTest;
+import h11.h3.ParsedLSystemTest;
+import h11.h3.ParsedLSystemTestCase;
+import h11.h4.AlgaeFibonacciGeneratorTest;
+import h11.h4.AlgaeTestTest;
+import h11.h4.FibonacciGeneratorImplTest;
+import h11.h5.RandomChoicesTestCase;
+import h11.h5.RandomLatinTestCase;
+import h11.h5.RandomTest;
 import org.sourcegrade.jagr.api.rubric.*;
 
-@RubricForSubmission("h11")
 public class H11_RubricProvider implements RubricProvider {
 
     // private static final Criterion H1_1 = Criterion.builder()
@@ -53,145 +61,145 @@ public class H11_RubricProvider implements RubricProvider {
         .addChildCriteria(H2_A, H2_B)
         .build();
 
-    // private static final Criterion H3_1_A = Criterion.builder()
-    //     .shortDescription("H11.3.1.A | Die erste Projektion gibt das Axiom vor")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> ParsedLSystemTest.class.getDeclaredMethod("testThat_firstProjectionGivesAxiom", ParsedLSystemTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H3_1_B = Criterion.builder()
-    //     .shortDescription("H11.3.1.B | Ist der aktuale Parameter bekannt, wird korrekt projektiert")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> ParsedLSystemTest.class.getDeclaredMethod("testThat_projectionsOfKnownProject", ParsedLSystemTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H3_1_C = Criterion.builder()
-    //     .shortDescription("H11.3.1.C | Ist der aktuale Parameter nicht bekannt, wird korrekt projektiert")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> ParsedLSystemTest.class.getDeclaredMethod("testThat_projectionsOfUnknownDoesNotProject", ParsedLSystemTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H3_1 = Criterion.builder()
-    //     .shortDescription("H11.3.1 | Eingelesene L-Systeme")
-    //     .addChildCriteria(H3_1_A, H3_1_B, H3_1_C)
-    //     .build();
-    // private static final Criterion H3_2_A = Criterion.builder()
-    //     .shortDescription("H11.3.2.A | Der Parser parsed einfachen Input")
-    //     .maxPoints(2)
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserParsesProjections")))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H3_2_B = Criterion.builder()
-    //     .shortDescription("H11.3.2.A | Der Parser parsed mittleren Input")
-    //     .maxPoints(2)
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserIgnoresInlineCommentsAndWhitespace")))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H3_2_C = Criterion.builder()
-    //     .shortDescription("H11.3.2.A | Der Parser parsed schweren Input")
-    //     .maxPoints(2)
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserIgnoresLinesWithCommentsAndEmptyLines")))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H3_2 = Criterion.builder()
-    //     .shortDescription("H11.3.2 | Der Parser")
-    //     .addChildCriteria(H3_2_A, H3_2_B, H3_2_C)
-    //     .build();
-    // private static final Criterion H3 = Criterion.builder()
-    //     .shortDescription("H11.3 | L-Systeme in Dateien speichern")
-    //     .addChildCriteria(H3_1, H3_2)
-    //     .build();
+    private static final Criterion H3_1_A = Criterion.builder()
+        .shortDescription("H11.3.1.A | Die erste Projektion gibt das Axiom vor")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> ParsedLSystemTest.class.getDeclaredMethod("testThat_firstProjectionGivesAxiom", ParsedLSystemTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H3_1_B = Criterion.builder()
+        .shortDescription("H11.3.1.B | Ist der aktuale Parameter bekannt, wird korrekt projektiert")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> ParsedLSystemTest.class.getDeclaredMethod("testThat_projectionsOfKnownProject", ParsedLSystemTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H3_1_C = Criterion.builder()
+        .shortDescription("H11.3.1.C | Ist der aktuale Parameter nicht bekannt, wird korrekt projektiert")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> ParsedLSystemTest.class.getDeclaredMethod("testThat_projectionsOfUnknownDoesNotProject", ParsedLSystemTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H3_1 = Criterion.builder()
+        .shortDescription("H11.3.1 | Eingelesene L-Systeme")
+        .addChildCriteria(H3_1_A, H3_1_B, H3_1_C)
+        .build();
+    private static final Criterion H3_2_A = Criterion.builder()
+        .shortDescription("H11.3.2.A | Der Parser parsed einfachen Input")
+        .maxPoints(2)
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserParsesProjections")))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H3_2_B = Criterion.builder()
+        .shortDescription("H11.3.2.A | Der Parser parsed mittleren Input")
+        .maxPoints(2)
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserIgnoresInlineCommentsAndWhitespace")))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H3_2_C = Criterion.builder()
+        .shortDescription("H11.3.2.A | Der Parser parsed schweren Input")
+        .maxPoints(2)
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserIgnoresLinesWithCommentsAndEmptyLines")))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H3_2 = Criterion.builder()
+        .shortDescription("H11.3.2 | Der Parser")
+        .addChildCriteria(H3_2_A, H3_2_B, H3_2_C)
+        .build();
+    private static final Criterion H3 = Criterion.builder()
+        .shortDescription("H11.3 | L-Systeme in Dateien speichern")
+        .addChildCriteria(H3_1, H3_2)
+        .build();
 
-    // private static final Criterion H4_1_A = Criterion.builder()
-    //     .shortDescription("H11.4.1.A | Die ersten zwei Werte sind jeweils korrekt")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> FibonacciGeneratorImplTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H4_1_B = Criterion.builder()
-    //     .shortDescription("H11.4.1.B | Alle Werte sind jeweils korrekt")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> FibonacciGeneratorImplTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H4_1 = Criterion.builder()
-    //     .shortDescription("H11.4.1 | Generieren der Fibonaccizahlen")
-    //     .addChildCriteria(H4_1_A, H4_1_B)
-    //     .build();
-    // private static final Criterion H4_2_A = Criterion.builder()
-    //     .shortDescription("H11.4.2.A | Die ersten zwei Werte sind jeweils korrekt")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeFibonacciGeneratorTest.class.getDeclaredMethod("testThat_initialIsCorrect", int.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H4_2_B = Criterion.builder()
-    //     .shortDescription("H11.4.1.B | Alle Werte sind jeweils korrekt")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeFibonacciGeneratorTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H4_2 = Criterion.builder()
-    //     .shortDescription("H11.4.2 | Auslesen der Fibonaccizahlen aus der Algae")
-    //     .addChildCriteria(H4_2_A, H4_2_B)
-    //     .build();
-    // private static final Criterion H4_3 = Criterion.builder()
-    //     .shortDescription("H11.4.3 | Der Testcase")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestAcceptsPositive", int.class)))
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestRejectsWrongSize", int.class)))
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestRejectsWrongValues", int.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H4 = Criterion.builder()
-    //     .shortDescription("H11.4 | Testen der Algae")
-    //     .addChildCriteria(H4_1, H4_2, H4_3)
-    //     .build();
+    private static final Criterion H4_1_A = Criterion.builder()
+        .shortDescription("H11.4.1.A | Die ersten zwei Werte sind jeweils korrekt")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> FibonacciGeneratorImplTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H4_1_B = Criterion.builder()
+        .shortDescription("H11.4.1.B | Alle Werte sind jeweils korrekt")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> FibonacciGeneratorImplTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H4_1 = Criterion.builder()
+        .shortDescription("H11.4.1 | Generieren der Fibonaccizahlen")
+        .addChildCriteria(H4_1_A, H4_1_B)
+        .build();
+    private static final Criterion H4_2_A = Criterion.builder()
+        .shortDescription("H11.4.2.A | Die ersten zwei Werte sind jeweils korrekt")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> AlgaeFibonacciGeneratorTest.class.getDeclaredMethod("testThat_initialIsCorrect", int.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H4_2_B = Criterion.builder()
+        .shortDescription("H11.4.1.B | Alle Werte sind jeweils korrekt")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> AlgaeFibonacciGeneratorTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H4_2 = Criterion.builder()
+        .shortDescription("H11.4.2 | Auslesen der Fibonaccizahlen aus der Algae")
+        .addChildCriteria(H4_2_A, H4_2_B)
+        .build();
+    private static final Criterion H4_3 = Criterion.builder()
+        .shortDescription("H11.4.3 | Der Testcase")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestAcceptsPositive", int.class)))
+            .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestRejectsWrongSize", int.class)))
+            .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestRejectsWrongValues", int.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H4 = Criterion.builder()
+        .shortDescription("H11.4 | Testen der Algae")
+        .addChildCriteria(H4_1, H4_2, H4_3)
+        .build();
 
-    // private static final Criterion H5_1 = Criterion.builder()
-    //     .shortDescription("H11.5.1 | Pythons choices")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> RandomTest.class.getDeclaredMethod("testChoices", RandomChoicesTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H5_2 = Criterion.builder()
-    //     .shortDescription("H11.5.2 | Zufälliges Latein")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> RandomTest.class.getDeclaredMethod("testLatin", RandomLatinTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H5 = Criterion.builder()
-    //     .shortDescription("H11.5 | Erweiterung von Random")
-    //     .addChildCriteria(H5_1, H5_2)
-    //     .build();
+    private static final Criterion H5_1 = Criterion.builder()
+        .shortDescription("H11.5.1 | Pythons choices")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> RandomTest.class.getDeclaredMethod("testChoices", RandomChoicesTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H5_2 = Criterion.builder()
+        .shortDescription("H11.5.2 | Zufälliges Latein")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> RandomTest.class.getDeclaredMethod("testLatin", RandomLatinTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H5 = Criterion.builder()
+        .shortDescription("H11.5 | Erweiterung von Random")
+        .addChildCriteria(H5_1, H5_2)
+        .build();
 
     // private static final Criterion H6_1 = Criterion.builder()
     //     .shortDescription("H11.6.1 | Zufällige Projektionen")
@@ -250,7 +258,7 @@ public class H11_RubricProvider implements RubricProvider {
 
     public static final Rubric RUBRIC = Rubric.builder()
         .title("H11 | L-Systeme")
-        .addChildCriteria(H2)
+        .addChildCriteria(H2, H3, H4, H5)
         .build();
 
     @Override
