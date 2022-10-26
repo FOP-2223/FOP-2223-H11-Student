@@ -11,32 +11,15 @@ import h11.h4.FibonacciGeneratorImplTest;
 import h11.h5.RandomChoicesTestCase;
 import h11.h5.RandomLatinTestCase;
 import h11.h5.RandomTest;
+import h11.h6.GenerateTestCase;
+import h11.h6.MakeProjectionTestCase;
+import h11.h6.RandomLSystemGeneratorTest;
+import h11.h7.LSystemAsLinesTestCase;
+import h11.h7.LSystemToRandomLinesConverterTest;
+import h11.h7.RandomSpacesTestCase;
 import org.sourcegrade.jagr.api.rubric.*;
 
 public class H11_RubricProvider implements RubricProvider {
-
-    // private static final Criterion H1_1 = Criterion.builder()
-    //     .shortDescription("H11.1.1 | Das Axiom")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTest.class.getDeclaredMethod("testThat_aIsAxiom")))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-
-    // private static final Criterion H1_2 = Criterion.builder()
-    //     .shortDescription("H11.1.2 | Die Projektionen")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTest.class.getDeclaredMethod("testProjectOfA")))
-    //         .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTest.class.getDeclaredMethod("testProjectOfB")))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H1 = Criterion.builder()
-    //     .shortDescription("H11.1 | Algae")
-    //     .addChildCriteria(H1_1, H1_2)
-    //     .build();
 
     private static final Criterion H2_A = Criterion.builder()
         .shortDescription("H11.2.A | Der Stream ist unendlich")
@@ -201,64 +184,64 @@ public class H11_RubricProvider implements RubricProvider {
         .addChildCriteria(H5_1, H5_2)
         .build();
 
-    // private static final Criterion H6_1 = Criterion.builder()
-    //     .shortDescription("H11.6.1 | Zufällige Projektionen")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> RandomLSystemGeneratorTest.class.getDeclaredMethod("testMakeProjection", MakeProjectionTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H6_2_A = Criterion.builder()
-    //     .shortDescription("H11.6.2_A | Es gibt keine doppelten Quellen")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> RandomLSystemGeneratorTest.class.getDeclaredMethod("testThat_sourcesAreUnique", int.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H6_2_B = Criterion.builder()
-    //     .shortDescription("H11.6.2_B | Die L-Systeme werden korrekt generiert")
-    //     .maxPoints(2)
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> RandomLSystemGeneratorTest.class.getDeclaredMethod("testGenerate", GenerateTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H6_2 = Criterion.builder()
-    //     .shortDescription("H11.6.2 | Zufällige Systeme")
-    //     .addChildCriteria(H6_2_A, H6_2_B)
-    //     .build();
-    // private static final Criterion H6 = Criterion.builder()
-    //     .shortDescription("H11.6 | Zufällige L-Systeme")
-    //     .addChildCriteria(H6_1, H6_2)
-    //     .build();
+    private static final Criterion H6_1 = Criterion.builder()
+        .shortDescription("H11.6.1 | Zufällige Projektionen")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> RandomLSystemGeneratorTest.class.getDeclaredMethod("testMakeProjection", MakeProjectionTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H6_2_A = Criterion.builder()
+        .shortDescription("H11.6.2_A | Es gibt keine doppelten Quellen")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> RandomLSystemGeneratorTest.class.getDeclaredMethod("testThat_sourcesAreUnique", int.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H6_2_B = Criterion.builder()
+        .shortDescription("H11.6.2_B | Die L-Systeme werden korrekt generiert")
+        .maxPoints(2)
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> RandomLSystemGeneratorTest.class.getDeclaredMethod("testGenerate", GenerateTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H6_2 = Criterion.builder()
+        .shortDescription("H11.6.2 | Zufällige Systeme")
+        .addChildCriteria(H6_2_A, H6_2_B)
+        .build();
+    private static final Criterion H6 = Criterion.builder()
+        .shortDescription("H11.6 | Zufällige L-Systeme")
+        .addChildCriteria(H6_1, H6_2)
+        .build();
 
-    // private static final Criterion H7_1 = Criterion.builder()
-    //     .shortDescription("H11.7.1 | Zufällige Leerzeichen")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> LSystemToRandomLinesConverterTest.class.getDeclaredMethod("testRandomSpacing", RandomSpacesTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H7_2 = Criterion.builder()
-    //     .shortDescription("H11.7.2 | Darstellung für das ganze System")
-    //     .grader(Grader.testAwareBuilder()
-    //         .requirePass(JUnitTestRef.ofMethod(() -> LSystemToRandomLinesConverterTest.class.getDeclaredMethod("testLSystemAsLines", LSystemAsLinesTestCase.class)))
-    //         .pointsFailedMin()
-    //         .pointsPassedMax()
-    //         .build())
-    //     .build();
-    // private static final Criterion H7 = Criterion.builder()
-    //     .shortDescription("H11.7 | Zufällige Darstellung eines L-Systems")
-    //     .addChildCriteria(H7_1, H7_2)
-    //     .build();
+    private static final Criterion H7_1 = Criterion.builder()
+        .shortDescription("H11.7.1 | Zufällige Leerzeichen")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> LSystemToRandomLinesConverterTest.class.getDeclaredMethod("testRandomSpacing", RandomSpacesTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H7_2 = Criterion.builder()
+        .shortDescription("H11.7.2 | Darstellung für das ganze System")
+        .grader(Grader.testAwareBuilder()
+            .requirePass(JUnitTestRef.ofMethod(() -> LSystemToRandomLinesConverterTest.class.getDeclaredMethod("testLSystemAsLines", LSystemAsLinesTestCase.class)))
+            .pointsFailedMin()
+            .pointsPassedMax()
+            .build())
+        .build();
+    private static final Criterion H7 = Criterion.builder()
+        .shortDescription("H11.7 | Zufällige Darstellung eines L-Systems")
+        .addChildCriteria(H7_1, H7_2)
+        .build();
 
     public static final Rubric RUBRIC = Rubric.builder()
         .title("H11 | L-Systeme")
-        .addChildCriteria(H2, H3, H4, H5)
+        .addChildCriteria(H2, H3, H4, H5, H6, H7)
         .build();
 
     @Override
