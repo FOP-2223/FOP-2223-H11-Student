@@ -173,6 +173,7 @@ public class H11_RubricProvider implements RubricProvider {
         .build();
     private static final Criterion H5_2 = Criterion.builder()
         .shortDescription("H11.5.2 | Zufälliges Latein")
+        .maxPoints(2)
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> RandomTest.class.getDeclaredMethod("testLatin", RandomLatinTestCase.class)))
             .pointsFailedMin()
