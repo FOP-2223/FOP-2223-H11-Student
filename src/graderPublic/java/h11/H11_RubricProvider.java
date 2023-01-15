@@ -73,7 +73,7 @@ public class H11_RubricProvider implements RubricProvider {
         .addChildCriteria(H3_1_A, H3_1_B, H3_1_C)
         .build();
     private static final Criterion H3_2_A = Criterion.builder()
-        .shortDescription("H11.3.2.A | Der Parser parsed einfachen Input")
+        .shortDescription("H11.3.2.A | Der Parser parsed einfachen Input korrekt")
         .maxPoints(2)
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserParsesProjections")))
@@ -82,7 +82,7 @@ public class H11_RubricProvider implements RubricProvider {
             .build())
         .build();
     private static final Criterion H3_2_B = Criterion.builder()
-        .shortDescription("H11.3.2.A | Der Parser parsed mittleren Input")
+        .shortDescription("H11.3.2.A | Der Parser parsed mittleren Input korrekt")
         .maxPoints(2)
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserIgnoresInlineCommentsAndWhitespace")))
@@ -91,7 +91,7 @@ public class H11_RubricProvider implements RubricProvider {
             .build())
         .build();
     private static final Criterion H3_2_C = Criterion.builder()
-        .shortDescription("H11.3.2.A | Der Parser parsed schweren Input")
+        .shortDescription("H11.3.2.A | Der Parser parsed schweren Input korrekt")
         .maxPoints(2)
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> LSystemParserTest.class.getDeclaredMethod("testThat_parserIgnoresLinesWithCommentsAndEmptyLines")))
@@ -137,7 +137,7 @@ public class H11_RubricProvider implements RubricProvider {
             .build())
         .build();
     private static final Criterion H4_2_B = Criterion.builder()
-        .shortDescription("H11.4.1.B | Alle Werte sind jeweils korrekt")
+        .shortDescription("H11.4.2.B | Alle Werte sind jeweils korrekt")
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> AlgaeFibonacciGeneratorTest.class.getDeclaredMethod("testThat_fibsAreCorrect", int.class)))
             .pointsFailedMin()
