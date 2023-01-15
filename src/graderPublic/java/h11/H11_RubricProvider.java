@@ -20,6 +20,17 @@ import h11.h7.RandomSpacesTestCase;
 import org.sourcegrade.jagr.api.rubric.*;
 
 public class H11_RubricProvider implements RubricProvider {
+        
+    public static final Criterion H1_1 = Criterion.builder()
+        .shortDescription("H11.1.1 | Das Axiom ist korrekt implementiert")
+        .build();
+    public static final Criterion H1_2 = Criterion.builder()
+        .shortDescription("H11.1.2 | Die Projektion ist korrekt implementiert")
+        .build();
+    private static final Criterion H1 = Criterion.builder()
+        .shortDescription("H11.1 | Algae")
+        .addChildCriteria(H1_1, H1_2)
+        .build();
 
     private static final Criterion H2_A = Criterion.builder()
         .shortDescription("H11.2.A | Der Stream ist unendlich")
@@ -241,7 +252,7 @@ public class H11_RubricProvider implements RubricProvider {
 
     public static final Rubric RUBRIC = Rubric.builder()
         .title("H11 | L-Systeme")
-        .addChildCriteria(H2, H3, H4, H5, H6, H7)
+        .addChildCriteria(H1, H2, H3, H4, H5, H6, H7)
         .build();
 
     @Override
