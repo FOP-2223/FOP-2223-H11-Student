@@ -21,6 +21,17 @@ import org.sourcegrade.jagr.api.rubric.*;
 
 public class H11_RubricProvider implements RubricProvider {
 
+    private static final Criterion H1_1 = Criterion.builder()
+        .shortDescription("H11.1.1 | Das Axiom ist korrekt implementiert")
+        .build();
+    private static final Criterion H1_2 = Criterion.builder()
+        .shortDescription("H11.1.2 | Die Projektion ist korrekt implementiert")
+        .build();
+    private static final Criterion H1 = Criterion.builder()
+        .shortDescription("H11.1 | Algae")
+        .addChildCriteria(H1_1, H1_2)
+        .build();
+
     private static final Criterion H2_A = Criterion.builder()
         .shortDescription("H11.2.A | Der Stream ist unendlich")
         .maxPoints(2)
@@ -149,7 +160,7 @@ public class H11_RubricProvider implements RubricProvider {
         .addChildCriteria(H4_2_A, H4_2_B)
         .build();
     private static final Criterion H4_3_A = Criterion.builder()
-        .shortDescription("H11.4.3 | Der Test ist korrekt implementiert")
+        .shortDescription("H11.4.3.A | Der Test ist korrekt implementiert")
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestAcceptsPositive", int.class)))
             .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestRejectsWrongSize", int.class)))
@@ -246,7 +257,7 @@ public class H11_RubricProvider implements RubricProvider {
 
     public static final Rubric RUBRIC = Rubric.builder()
         .title("H11 | L-Systeme")
-        .addChildCriteria(H2, H3, H4, H5, H6, H7)
+        .addChildCriteria(H1, H2, H3, H4, H5, H6, H7)
         .build();
 
     @Override
