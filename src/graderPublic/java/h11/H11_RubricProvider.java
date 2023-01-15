@@ -148,8 +148,8 @@ public class H11_RubricProvider implements RubricProvider {
         .shortDescription("H11.4.2 | Auslesen der Fibonaccizahlen aus der Algae")
         .addChildCriteria(H4_2_A, H4_2_B)
         .build();
-    private static final Criterion H4_3 = Criterion.builder()
-        .shortDescription("H11.4.3 | Der Testcase")
+    private static final Criterion H4_3_A = Criterion.builder()
+        .shortDescription("H11.4.3 | Der Test ist korrekt implementiert")
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestAcceptsPositive", int.class)))
             .requirePass(JUnitTestRef.ofMethod(() -> AlgaeTestTest.class.getDeclaredMethod("testThat_algaeTestRejectsWrongSize", int.class)))
@@ -157,6 +157,10 @@ public class H11_RubricProvider implements RubricProvider {
             .pointsFailedMin()
             .pointsPassedMax()
             .build())
+        .build();
+    private static final Criterion H4_3 = Criterion.builder()
+        .shortDescription("H11.4.3 | Der Testcase")
+        .addChildCriteria(H4_3_A)
         .build();
     private static final Criterion H4 = Criterion.builder()
         .shortDescription("H11.4 | Testen der Algae")
