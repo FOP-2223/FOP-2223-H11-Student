@@ -50,12 +50,15 @@ public class ParsedLSystemTest {
     @ParameterizedTest
     @JsonClasspathSource("h11/h3/parsed-lsystem-test.json")
     @Tag("H3")
-    public void testThat_projectionsOfUnknownDoesNotProject(ParsedLSystemTestCase testCase) throws NoSuchMethodException {
+    public void testThat_projectionsOfUnknownDoesNotProject(ParsedLSystemTestCase testCase) {
         var lSystem = new ParsedLSystem(testCase.projections());
-
-        for (char c = '0'; c <= '9'; c++) {
-            Assertions2.assertEquals(List.of(c), lSystem.project(c).toList(), getProjectContext(), result ->
-                "The unknown source was not ignored correctly");
+        try{
+            for (char c = '0'; c <= '9'; c++) {
+                Assertions2.assertEquals(List.of(c), lSystem.project(c).toList(), getProjectContext(), result ->
+                    "The unknown source was not ignored correctly");
+            }
+        } catch (Exception exc) {
+            throw new AssertionError(exc.getClass());
         }
     }
 
